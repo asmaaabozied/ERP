@@ -1,10 +1,10 @@
-@extends('dashboard.layouts.app') 
-@section('content') 
-     
+@extends('dashboard.layouts.app')
+@section('content')
+
     <x-dashboard.tap-content>
         <x-slot name="breadcrumb">
             <x-dashboard.breadcrumb />
-        </x-slot> 
+        </x-slot>
         <x-slot name="taps">
             <li class="nav-item ">
                 <a class="nav-link active" id="group-card-tab" data-toggle="tab" href="#group-card-0">
@@ -58,8 +58,11 @@
                 <div class="align-items-center d-flex flex-sm-nowrap flex-wrap justify-content-between">
                     <!--begin::Toolbar-->
                     <div class="d-flex align-items-center">
+                        @if (auth()->user()->hasPermission('create_taxes))
+
                         <a href="{{route('taxes.create')}}" class="btn btn-outline-primary mr-1">
                             New <i class="icon-lg la la-file-medical"></i></a>
+                        @endif
                         <a href="#" class="btn btn-outline-primary mr-1">
                             update <i class="icon-lg la la-redo-alt"></i></a>
                         <a href="#" class="btn btn-outline-primary mr-1">
@@ -160,21 +163,21 @@
                                                     <th data-field="name" class="datatable-cell "><span style="">@lang('general.type')</span></th>
                                                     <th data-field="name" class="datatable-cell "><span style="">@lang('general.amount')</span></th>
 													<th data-field="Actions"  class="datatable-cell "><span style="">@lang('general.actions')</span></th>
-													
+
 												</tr>
 											</thead>
                                             <tbody class="datatable-body " >
                                                 @foreach ($taxes as $tax)
-                                                
+
                                                 <tr  class="datatable-row datatable-row-even" style="left: 0px;">
-                                                   
+
 													<td class="datatable-cell-center datatable-cell datatable-cell-check"><span style=""><label class="checkbox checkbox-single">
                                                         <input type="checkbox" value="">&nbsp;<span></span></label></span></td>
-                                                      
+
 													<td  class="datatable-cell"><span >{{$tax->id}}</span></td>
                                                     <td  class="datatable-cell"><span >{{$tax->name}}</span></td>
-                                                    <td  class="datatable-cell"><span >{{$tax->type}}</span></td>    
-                                                    <td  class="datatable-cell"><span >{{$tax->amount}}</span></td>        
+                                                    <td  class="datatable-cell"><span >{{$tax->type}}</span></td>
+                                                    <td  class="datatable-cell"><span >{{$tax->amount}}</span></td>
 													<td class="datatable-cell"><span style="overflow: visible; position: relative;">
 															<div class="dropdown dropdown-inline">
                                                                  <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" data-toggle="dropdown">
@@ -214,7 +217,7 @@
 												 @endforeach
 											</tbody>
 										</table>
-{{-- 
+{{--
                                         <div class="datatable-pager datatable-paging-loaded">
                                             <ul class="datatable-pager-nav mb-5 mb-sm-0">
                                                 <li><a title="First" class="datatable-pager-link datatable-pager-link-first datatable-pager-link-disabled" data-page="1" disabled="disabled">
@@ -257,10 +260,10 @@
 
 
         {{-- end main content --}}
-        
+
 
     </x-dashboard.tap-content>
-    
-    
+
+
 
 @endsection

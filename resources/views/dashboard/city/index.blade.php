@@ -1,10 +1,10 @@
-@extends('dashboard.layouts.app') 
-@section('content') 
-     
+@extends('dashboard.layouts.app')
+@section('content')
+
     <x-dashboard.tap-content>
         <x-slot name="breadcrumb">
             <x-dashboard.breadcrumb />
-        </x-slot> 
+        </x-slot>
         <x-slot name="taps">
             <li class="nav-item ">
                 <a class="nav-link active" id="group-card-tab" data-toggle="tab" href="#group-card-0">
@@ -58,8 +58,11 @@
                 <div class="align-items-center d-flex flex-sm-nowrap flex-wrap justify-content-between">
                     <!--begin::Toolbar-->
                     <div class="d-flex align-items-center">
+                        @if (auth()->user()->hasPermission('create_geographies'))
+
                         <a href="{{route('city.create')}}" class="btn btn-outline-primary mr-1">
                             New <i class="icon-lg la la-file-medical"></i></a>
+                        @endif
                         <a href="#" class="btn btn-outline-primary mr-1">
                             update <i class="icon-lg la la-redo-alt"></i></a>
                         <a href="#" class="btn btn-outline-primary mr-1">
@@ -159,16 +162,16 @@
                                                     <th data-field="name" class="datatable-cell "><span style="">City Name</span></th>
 													<th data-field="name" class="datatable-cell "><span style="">Country Name</span></th>
 													<th data-field="Actions"  class="datatable-cell "><span style="">Actions</span></th>
-													
+
 												</tr>
 											</thead>
                                             <tbody class="datatable-body " >
                                                 @foreach ($cities as $city)
                                                 <tr  class="datatable-row datatable-row-even" style="left: 0px;">
-                                                   
+
 													<td class="datatable-cell-center datatable-cell datatable-cell-check"><span style=""><label class="checkbox checkbox-single">
                                                         <input type="checkbox" value="">&nbsp;<span></span></label></span></td>
-                                                      
+
 													<td  class="datatable-cell"><span >{{$city->id}}</span></td>
                                                     <td  class="datatable-cell"><span >{{$city->name}}</span></td>
                                                     <td  class="datatable-cell"><span >{{$city->country->name}}</span></td>
@@ -212,7 +215,7 @@
 											</tbody>
 										</table>
 
-                                        
+
 									</div>
 									<!--end: Datatable-->
 
@@ -226,10 +229,10 @@
 
 
         {{-- end main content --}}
-        
+
 
     </x-dashboard.tap-content>
-    
-    
+
+
 
 @endsection

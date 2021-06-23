@@ -61,8 +61,12 @@
                         <div class="align-items-center d-flex flex-sm-nowrap flex-wrap justify-content-between">
                             <!--begin::Toolbar-->
                             <div class="d-flex align-items-center">
+
+                                @if (auth()->user()->hasPermission('create_guarante'))
+
                                 <a href="{{route('Guarantee.create')}}" class="btn btn-outline-primary mr-1">
                                     New <i class="icon-lg la la-file-medical"></i></a>
+                                @endif
                                 <a href="#" class="btn btn-outline-primary mr-1">
                                     update <i class="icon-lg la la-redo-alt"></i></a>
                                 <a href="#" class="btn btn-outline-primary mr-1">

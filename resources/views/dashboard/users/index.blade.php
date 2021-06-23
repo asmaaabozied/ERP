@@ -58,9 +58,9 @@
                 <div class="align-items-center d-flex flex-sm-nowrap flex-wrap justify-content-between">
                     <!--begin::Toolbar-->
                     <div class="d-flex align-items-center">
-                        @if (auth()->user()->hasPermission('create_bulkunits'))
+                        @if (auth()->user()->hasPermission('create_users))
 
-                        <a href="{{route('bulkunits.create')}}" class="btn btn-outline-primary mr-1">
+                        <a href="{{route('users.create')}}" class="btn btn-outline-primary mr-1">
                             New <i class="icon-lg la la-file-medical"></i></a>
                         @endif
                         <a href="#" class="btn btn-outline-primary mr-1">
@@ -158,22 +158,23 @@
                                         <thead class="datatable-head">
 												<tr class="datatable-row" style="left: 0px;">
 													<th data-field="id" class="datatable-cell-center datatable-cell datatable-cell-check"><span style=""><label class="checkbox checkbox-single checkbox-all"><input type="checkbox">&nbsp;<span></span></label></span></th>
-													<th data-field="employee_id" class="datatable-cell "><span style="">@lang('general.id')</span></th>
-													<th data-field="name" class="datatable-cell "><span style="">@lang('general.bulkunit_name')</span></th>
-													<th data-field="Actions"  class="datatable-cell "><span style="">@lang('general.actions')</span></th>
+													<th data-field="employee_id" class="datatable-cell "><span style="">user ID</span></th>
+													<th data-field="name" class="datatable-cell "><span style="">user Name</span></th>
+                                                    <th data-field="name" class="datatable-cell "><span style="">user Email</span></th>
+													<th data-field="Actions"  class="datatable-cell "><span style="">Actions</span></th>
 
 												</tr>
 											</thead>
                                             <tbody class="datatable-body " >
-                                                @foreach ($bulkunits as $bulkunit)
-
+                                                @foreach ($employees as $employee)
                                                 <tr  class="datatable-row datatable-row-even" style="left: 0px;">
 
 													<td class="datatable-cell-center datatable-cell datatable-cell-check"><span style=""><label class="checkbox checkbox-single">
                                                         <input type="checkbox" value="">&nbsp;<span></span></label></span></td>
 
-													<td  class="datatable-cell"><span >{{$bulkunit->id}}</span></td>
-                                                    <td  class="datatable-cell"><span >{{$bulkunit->name}}</span></td>
+													<td  class="datatable-cell"><span >{{$employee->id}}</span></td>
+                                                    <td  class="datatable-cell"><span >{{$employee->name}}</span></td>
+                                                    <td  class="datatable-cell"><span >{{$employee->email}}</span></td>
 													<td class="datatable-cell"><span style="overflow: visible; position: relative;">
 															<div class="dropdown dropdown-inline">
                                                                  <a href="javascript:;" class="btn btn-sm btn-clean btn-icon mr-2" data-toggle="dropdown">
@@ -214,35 +215,6 @@
 											</tbody>
 										</table>
 
-                                        {{-- <div class="datatable-pager datatable-paging-loaded">
-                                            <ul class="datatable-pager-nav mb-5 mb-sm-0">
-                                                <li><a title="First" class="datatable-pager-link datatable-pager-link-first datatable-pager-link-disabled" data-page="1" disabled="disabled">
-                                                        <i class="flaticon2-fast-back"></i></a></li>
-                                                <li>
-                                                    <a title="Previous" class="datatable-pager-link datatable-pager-link-prev datatable-pager-link-disabled" data-page="1" disabled="disabled">
-                                                        <i class="flaticon2-back"></i></a>
-                                                </li>
-                                                <li style=""></li>
-                                                <li style="display: none;">
-                                                    <input type="text" class="datatable-pager-input form-control" title="Page number">
-                                                </li>
-                                                <li>
-                                                    <a class="datatable-pager-link datatable-pager-link-number datatable-pager-link-active" data-page="1" title="1">1</a>
-                                                </li>
-                                                <li><a class="datatable-pager-link datatable-pager-link-number" data-page="2" title="2">2</a></li>
-                                                <li><a class="datatable-pager-link datatable-pager-link-number" data-page="3" title="3">3</a></li>
-                                                <li><a class="datatable-pager-link datatable-pager-link-number" data-page="4" title="4">4</a></li>
-                                                <li><a class="datatable-pager-link datatable-pager-link-number" data-page="5" title="5">5</a></li>
-                                                <li style=""></li>
-                                                <li><a title="Next" class="datatable-pager-link datatable-pager-link-next" data-page="2">
-                                                        <i class="flaticon2-next"></i></a></li>
-                                                <li><a title="Last" class="datatable-pager-link datatable-pager-link-last" data-page="5">
-                                                        <i class="flaticon2-fast-next"></i></a></li>
-                                            </ul>
-                                            <div class="datatable-pager-info">
-                                                <span class="datatable-pager-detail">Showing 1 - 10 of 43</span>
-                                            </div>
-                                        </div> --}}
 									</div>
 									<!--end: Datatable-->
 
@@ -251,8 +223,7 @@
         </div>
 </div>
 
-
-{{$bulkunits->links()}}
+{{$employees->links()}}
 
 
         {{-- end main content --}}
