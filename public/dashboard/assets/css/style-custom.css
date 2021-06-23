@@ -1,0 +1,166 @@
+.product-view-card .product-img-box {
+    border: 1px solid #dfdede;
+    border-radius: 4px;
+    padding: 2px;
+    background: #fff;
+	box-shadow:9px 9px 10px #ceccccc7;
+}
+
+.product-view-card button.btn {
+    width: 48%;
+    margin: 9% 0;
+}
+#kt_wrapper .card-title,.card-title {
+	padding: 2.25rem 2.25rem 0;
+}
+ .product-view-card tr {
+    border-top: 1px solid #dfdfe1;
+    border-bottom: 1px solid #dfdfe1;
+}
+ .product-view-card tr td:nth-child(odd) {
+	 background-color: #f5f5f5;
+}
+ .product-view-card tr td:nth-child(even) {
+        background-color: transparent !important;
+
+}
+.product-view-card td {
+    text-align: end;
+}
+.product-view-card td {
+    text-align: start;
+    padding: 10px;
+    font-weight: 500;
+    color: #211E22;
+    font-size: 14px;
+    border-top: none;
+	text-transform: capitalize;}
+
+.datatable.datatable-default > .datatable-table > .datatable-head .datatable-row > .datatable-cell.datatable-cell-check, .datatable.datatable-default > .datatable-table > .datatable-body .datatable-row > .datatable-cell.datatable-cell-check, .datatable.datatable-default > .datatable-table > .datatable-foot .datatable-row > .datatable-cell.datatable-cell-check{
+	min-width: 40px;
+}
+.datatable.datatable-default > .datatable-table > .datatable-head .datatable-row > .datatable-cell, .datatable.datatable-default > .datatable-table > .datatable-body .datatable-row > .datatable-cell, .datatable.datatable-default > .datatable-table > .datatable-foot .datatable-row > .datatable-cell{
+	    min-width: 150px;
+      max-width: 150px;
+}
+.datatable.datatable-default > .datatable-table{
+	overflow: auto !important;
+}
+table::-webkit-scrollbar-track {
+  background-color: #fcf9f9;
+}
+table::-webkit-scrollbar {
+    width: 16px;
+    height: 8px;
+}
+table::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+	transition: .5s;
+}
+table::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+/* span.relative.z-0.inline-flex.shadow-sm.rounded-md {
+  display: none;
+}*/
+nav.flex.items-center.justify-between {
+  /* display: flex; */
+  -webkit-box-pack: justify !important;
+  -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    /* justify-content: space-between !important; */
+
+} 
+svg.w-5.h-5 {
+  width: 20px;
+}
+nav.flex.items-center.justify-between {
+  margin-bottom: 30px;
+}
+.flex.justify-between.flex-1.sm\:hidden {
+  margin-bottom: 24px;
+}
+.hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between div:first-of-type{
+  float: right;
+}
+
+
+.card-custom .tab-pane {
+  padding: 0 0 0;
+
+
+}
+
+.text-end {
+  text-align: end !important;
+}
+
+form .btn {
+  border-radius: 0;
+  min-width: 150px;
+  min-height: 40px;
+}
+
+.max-height-textarea {
+  height: 50px;
+}
+
+.max-height-textarea {
+  height: 40px !important;
+  min-height: 40px !important;
+}
+
+.form-group {
+  margin-bottom: .5rem;
+}
+
+.datatable.datatable-default.table-product>.datatable-table>.datatable-head .datatable-row>.datatable-cell.datatable-cell-center,
+.table-product.datatable.datatable-default>.datatable-table>.datatable-body .datatable-row>.datatable-cell.datatable-cell-center,
+.table-product.datatable.datatable-default>.datatable-table>.datatable-foot .datatable-row>.datatable-cell.datatable-cell-center {
+  max-width: 40px !important;
+  width: 9px;
+  min-width: 40px !important;
+}
+
+.datatable.datatable-default.datatable-head-custom.table-product>.datatable-table>.datatable-head .datatable-row>.datatable-cell>span,
+.datatable.datatable-default.datatable-head-custom.table-product>.datatable-table>.datatable-foot .datatable-row>.datatable-cell>span {
+  color: #ffffff;
+}
+
+.table-product thead.datatable-head {
+  background: #4e80b1;
+}
+
+.total-table {
+  width: 50%;
+  text-align: start;
+  margin-left: auto;
+  background: white;
+  margin-top: 10px;
+  padding: 0 14px;
+}
+
+th.datatable-cell.end-cell {
+  min-width: 60px !important;
+}
+
+.end-td .btn {
+  min-width: 40px !important;
+  min-height: 40px !important;
+  margin: 5px auto !important;
+
+}
+
+td.text-center.end-td {
+  min-width: 60px;
+}
+.table-product td.datatable-cell {
+padding: 0 2px !important;
+}
+.select2-container--default .select2-selection--single {
+border-radius: 0px !important;
+  min-height: 40px !important;}
+  select.select2 {
+    opacity: 1;
+    }
